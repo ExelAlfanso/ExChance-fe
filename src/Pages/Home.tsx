@@ -7,7 +7,7 @@ import Overview from "./Section/Overview";
 
 const Home = () => {
   return (
-    <div className="min-h-screen relative bg-primary">
+    <div className="min-h-screen relative bg-primary overflow-hidden">
       <Navbar id={""}></Navbar>
       <Hero id="Hero"></Hero>
       <Features id="Features"></Features>
