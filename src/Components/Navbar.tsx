@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { NavBarDatas } from "../Datas/NavbarData";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
@@ -12,6 +12,22 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
   const [open, setOpen] = React.useState(false);
+  const sideBarRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        sideBarRef.current &&
+        !sideBarRef.current.contains(e.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+    if (open) document.addEventListener("mousedown", handleClickOutside);
+    else document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
   function handleClick() {
     setOpen(!open);
   }
@@ -36,6 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
         <Button>Get Started</Button>
       </div>
       <div
+        ref={sideBarRef}
         className={`bg-primary py-10 top-13 w-full absolute flex flex-col items-center justify-center gap-4 lg:hidden transition-opacity font-semibold ${
           open
             ? "opacity-100 pointer-events-auto"
