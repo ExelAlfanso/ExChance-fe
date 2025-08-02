@@ -31,7 +31,11 @@ const Footer: React.FC<FooterProps> = ({ id, className, children }) => {
       <div className="flex flex-col">
         <Heading className="mb-3 text-base font-semibold">NAVIGATION</Heading>
         {FooterDatas.map((item, index) => (
-          <Link key={index} to={item.href}>
+          <Link
+            key={index}
+            to={item.href}
+            className="hover:font-semibold transition-all"
+          >
             {item.label}
           </Link>
         ))}

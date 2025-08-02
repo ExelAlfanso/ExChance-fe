@@ -4,8 +4,8 @@ export type NavBarData = {
 };
 
 export const NavBarDatas = [
-  { label: "Market", href: "/market" },
-  { label: "Wallet", href: "/wallet" },
-  { label: "Learn", href: "/learn" },
-  { label: "Support", href: "/support" },
+  { label: "MARKET", href: "/market" },
+  { label: "WALLET", href: "/wallet" },
+  { label: "LEARN", href: "/learn" },
+  { label: "SUPPORT", href: "/support" },
 ];

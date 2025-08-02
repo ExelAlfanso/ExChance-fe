@@ -18,13 +18,17 @@ const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
   return (
     <nav
       id={id}
-      className={`w-full items-right justify-end lg:items-center lg:justify-center bg-primary font-primary text-secondary flex flex-row ${className}`}
+      className={`w-full items-center justify-between mx-1 lg:items-center lg:justify-center bg-primary font-primary text-secondary flex flex-row ${className}`}
     >
       <div className="justify-between hidden w-full py-6 px-15 lg:flex lg:flex-row">
-        <img src="logo.png" alt="" />
+        <img src="logo.png" className="cursor-pointer" alt="" />
         <div className="flex gap-16 font-light">
           {NavBarDatas.map((item, index) => (
-            <Link key={index} to={item.href}>
+            <Link
+              key={index}
+              to={item.href}
+              className="hover:font-semibold transition-all"
+            >
               {item.label}
             </Link>
           ))}
@@ -32,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
         <Button>Get Started</Button>
       </div>
       <div
-        className={`bg-primary py-10 top-10 w-full absolute flex flex-col items-center justify-center gap-4 lg:hidden transition-opacity font-semibold ${
+        className={`bg-primary py-10 top-13 w-full absolute flex flex-col items-center justify-center gap-4 lg:hidden transition-opacity font-semibold ${
           open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -44,6 +48,11 @@ const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
           </Link>
         ))}
       </div>
+      <img
+        src="logo.png"
+        alt=""
+        className="h-10 px-3 lg:hidden cursor-pointer"
+      />
       <button onClick={handleClick} className="p-5 lg:hidden">
         <Menu className="text-white cursor-pointer"></Menu>
       </button>

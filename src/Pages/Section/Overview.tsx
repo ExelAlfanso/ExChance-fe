@@ -52,7 +52,7 @@ const Overview: React.FC<OverviewProps> = ({ id, className, children }) => {
           </thead>
           <tbody>
             {coins.map((coin, index) => (
-              <tr key={index}>
+              <tr key={index} className="hover:bg-slate-900 cursor-pointer">
                 <td className="p-6">{index + 1}</td>
                 <td className="p-4 text-left">
                   <img

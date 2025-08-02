@@ -14,17 +14,17 @@ const Button: React.FC<ButtonProps> = ({
   children,
 }) => {
   const typeClasses: Record<"primary" | "secondary", string> = {
-    primary:
-      "bg-gradient-to-r from-[#FFBC4C] via-white to-[#FFBC4C] text-tertiary",
+    primary: "text-tertiary hover:text-secondary transition-all",
     secondary: "bg-transparent border border-white text-white",
   };
-
   return (
     <button
       id={id}
-      className={`cursor-pointer text-base rounded-full px-0.5 py-0.5 font-primary font-bold transition-all duration-200 ${typeClasses[type]} ${className}`}
+      className={`bg-gradient-to-r from-[#FFBC4C] via-white to-[#FFBC4C] cursor-pointer text-base rounded-full px-0.5 py-0.5 font-primary font-bold transition-all duration-200 ${className}`}
     >
-      <div className="bg-primary rounded-full px-5 py-3">{children}</div>
+      <div className={`bg-primary rounded-full px-5 py-3 ${typeClasses[type]}`}>
+        {children}
+      </div>
     </button>
   );
 };
