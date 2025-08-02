@@ -1,6 +1,5 @@
 import React from "react";
 import { NavBarDatas } from "../Datas/NavbarData";
-// import Button from "./Button";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import Button from "./Button";
@@ -19,15 +18,17 @@ const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
   return (
     <nav
       id={id}
-      className={`items-right justify-end lg:items-center lg:justify-between bg-primary font-primary text-secondary flex flex-row gap-10 ${className}`}
+      className={`w-full items-right justify-end lg:items-center lg:justify-center bg-primary font-primary text-secondary flex flex-row ${className}`}
     >
-      <div className="gap-16 hidden lg:flex lg:flex-row lg:items-center lg:justify-between">
-        <img src="logo.svg" alt="" />
-        {NavBarDatas.map((item, index) => (
-          <Link key={index} to={item.href}>
-            {item.label}
-          </Link>
-        ))}
+      <div className="justify-between hidden w-full py-6 px-15 lg:flex lg:flex-row">
+        <img src="logo.png" alt="" />
+        <div className="flex gap-16 font-light">
+          {NavBarDatas.map((item, index) => (
+            <Link key={index} to={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
         <Button>Get Started</Button>
       </div>
       <div
@@ -43,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ id, className, children }) => {
           </Link>
         ))}
       </div>
-      <button onClick={handleClick} className="lg:hidden p-5">
+      <button onClick={handleClick} className="p-5 lg:hidden">
         <Menu className="text-white cursor-pointer"></Menu>
       </button>
       {children}

@@ -21,15 +21,15 @@ const Overview: React.FC<OverviewProps> = ({ id, className, children }) => {
       className={`bg-primary ${className} flex flex-col items-center justify-center mb-14 lg:mb-16`}
     >
       <div className="items-center justify-center font-semibold text-center">
-        <Heading level={5} className="inline lg:block mr-2">
+        <Heading level={5} className="inline mr-2 lg:block">
           Discover the Future of Finance with Our
         </Heading>
-        <Heading level={5} className="text-tertiary inline lg:block">
+        <Heading level={5} className="inline text-tertiary lg:block">
           Curated Coins
         </Heading>
       </div>
-      <div className="lg:flex items-center justify-center w-full overflow-x-auto mb-5 lg:mb-16 scrollbar-thin scrollbar-track-primary scrollbar-thumb-secondary">
-        <table className="table-auto text-secondary font-primary text-base text-semibold">
+      <div className="items-center justify-center w-full mb-5 overflow-x-auto lg:flex lg:mb-16 scrollbar-thin scrollbar-track-primary scrollbar-thumb-secondary">
+        <table className="text-base table-auto text-secondary font-primary text-semibold">
           <thead className="text-right">
             <th className="text-center">
               <span>
@@ -54,14 +54,14 @@ const Overview: React.FC<OverviewProps> = ({ id, className, children }) => {
             {coins.map((coin, index) => (
               <tr key={index}>
                 <td className="p-6">{index + 1}</td>
-                <td className="text-left p-4">
+                <td className="p-4 text-left">
                   <img
                     src={coin.image}
                     alt=""
                     className="w-[16px] inline mr-1"
                   />
                   <span className="font-semibold">{coin.name}</span>
-                  <span className="text-sm font-normal ml-1">
+                  <span className="ml-1 text-sm font-normal">
                     ({coin.symbol.toUpperCase()})
                   </span>
                 </td>
@@ -88,7 +88,7 @@ const Overview: React.FC<OverviewProps> = ({ id, className, children }) => {
                     minimumFractionDigits: 0,
                   })}
                 </td>
-                <td className="text-right px-3 py-4">
+                <td className="px-3 py-4 text-right">
                   {coin.market_cap.toLocaleString("en-US", {
                     style: "currency",
                     currency: "USD",

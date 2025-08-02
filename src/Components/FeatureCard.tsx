@@ -21,18 +21,18 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       id={id}
       className={`relative p-[2px] rounded-3xl bg-[linear-gradient(to_right,_#FFBC4C_0%,_#FFF_5%,_#FFF_25%,_#FFF_50%,_#FFBC4C_100%)] ${className}`}
     >
-      <div className="relative bg-primary rounded-3xl flex flex-row items-center gap-4 px-6 py-8 overflow-hidden">
-        <img src={icon} alt="" className="w-8 lg:w-12 h-auto" />
-        <div className="flex flex-col mx-10 leading-relaxed">
+      <div className="relative flex flex-row items-center gap-8 px-6 py-8 overflow-hidden bg-primary rounded-3xl">
+        <img src={icon} alt="" className="w-8 h-auto lg:w-12" />
+        <div className="flex flex-col pr-10 leading-relaxed w-110">
           <Heading level={6} className="font-semibold">
             {label}
           </Heading>
-          <Heading level={6} className="font-normal">
+          <Heading level={6} className="font-normal ">
             {description}
           </Heading>
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-primary to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-16 pointer-events-none bg-gradient-to-t from-primary to-transparent" />
     </div>
   );
 };

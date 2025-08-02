@@ -15,15 +15,15 @@ const Features: React.FC<FeaturesProps> = ({ id, className, children }) => {
       id={id}
       className={`bg-primary ${className} flex flex-col items-center justify-center mb-14 lg:mb-16`}
     >
-      <div className="text-center font-semibold mb-5 lg:mb-16">
-        <Heading level={5} className="inline lg:block mr-2">
+      <div className="mb-5 font-semibold text-center lg:mb-16">
+        <Heading level={5} className="inline mr-2 lg:block">
           Unlock the Power of Crypto Trading with
         </Heading>
         <Heading level={5} className="inline lg:block text-tertiary">
           ExChance
         </Heading>
       </div>
-      <div className="mx-10 flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-4">
+      <div className="flex flex-col mx-10 lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
         {featuresDatas.map((item, index) => (
           <FeatureCard
             key={index}
