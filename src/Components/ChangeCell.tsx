@@ -3,9 +3,10 @@ interface ChangeCellProps {
 }
 
 const ChangeCell: React.FC<ChangeCellProps> = ({ value }) => (
-  <td className={`p-6 ${value >= 0 ? "text-green" : "text-red"}`}>
-    <div className="flex flex-row mx-auto">
+  <td className={`  ${value >= 0 ? "text-green" : "text-red"}`}>
+    <div className="flex flex-row px-6 py-4 ">
       <img
+        className="mr-2"
         src={
           value >= 0
             ? "icon-park-solid_up-two.svg"
@@ -13,7 +14,7 @@ const ChangeCell: React.FC<ChangeCellProps> = ({ value }) => (
         }
         alt=""
       />
-      {Math.abs(value).toFixed(2)}%
+      <p>{Math.abs(value).toFixed(2)}%</p>
     </div>
   </td>
 );
